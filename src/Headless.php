@@ -24,7 +24,7 @@ class Headless
         $this->browser = $browserFactory->createBrowser($settings);
 
         // creates a new page and navigate to an url
-        $this->page = $browser->createPage();
+        $this->page = $this->browser->createPage();
         $this->page->navigate($url)->waitForNavigation();
         $this->page->addScriptTag([
             'url' => 'https://code.jquery.com/jquery-3.4.1.min.js'
