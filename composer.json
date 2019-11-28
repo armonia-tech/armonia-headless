@@ -1,0 +1,27 @@
+{
+    "name": "armonia-tech/armonia-headless",
+    "description": "Libraries for headless",
+    "keywords": ["armonia", "armonia tech", "headless"],
+    "homepage": "https://github.com/armonia-tech/armonia-search.git",
+    "license": "BSD-3-Clause", 
+    "config": {
+        "vendor-dir": "vendors",
+        "optimize-autoloader": true
+    },
+    "autoload": {
+        "psr-4": { "ArmoniaHeadless\\": "src/" }
+    },
+    "authors": [
+        {
+            "name": "Armonia Tech",
+            "email": "developer@armonia-tech.com"
+        }
+    ],
+    "require": {
+        "infostars/headless-chromium-php": "^0.6.2"
+    },
+    "minimum-stability": "stable",
+    "require-dev": {
+        
+    }
+}
