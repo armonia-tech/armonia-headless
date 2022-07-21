@@ -15,9 +15,10 @@ class Headless
      * @param  string $url
      * @param  array  $settings
      * @param  string $pre_script default null
+     * @param  string $timeout default 2 seconds
      * @return void
      */
-    public function __construct(string $url, array $settings = ['noSandbox' => true], string $pre_script = null)
+    public function __construct(string $url, array $settings = ['noSandbox' => true], string $pre_script = null, int $timeout = 2)
     {
         $browserFactory = new BrowserFactory('chromium-browser');
 
@@ -34,7 +35,7 @@ class Headless
         $this->page->navigate($url)->waitForNavigation();
         $this->page->addScriptTag([
             'url' => 'https://code.jquery.com/jquery-3.4.1.min.js'
-        ])->waitForResponse();
+        ])->waitForResponse($timeout);
     }
 
     /**
