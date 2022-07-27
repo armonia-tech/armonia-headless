@@ -15,10 +15,10 @@ class Headless
      * @param  string $url
      * @param  array  $settings
      * @param  string $pre_script default null
-     * @param  string $timeout default 2 seconds
+     * @param  string $timeout default 2000 ms = 2 seconds
      * @return void
      */
-    public function __construct(string $url, array $settings = ['noSandbox' => true], string $pre_script = null, int $timeout = 2)
+    public function __construct(string $url, array $settings = ['noSandbox' => true], string $pre_script = null, int $timeout = 2000)
     {
         $browserFactory = new BrowserFactory('chromium-browser');
 
