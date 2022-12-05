@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "chrome-php/chrome": "^0.8.1"
+        "chrome-php/chrome": "1.7"
     },
     "minimum-stability": "stable",
     "require-dev": {
