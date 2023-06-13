@@ -8,6 +8,8 @@ class Headless
     private $browser;
     private $page;
 
+    const DISABLE_DEV_SHM_FLAG = '--disable-dev-shm-usage';
+
     /**
      * Construct
      *
@@ -21,6 +23,9 @@ class Headless
     public function __construct(string $url, array $settings = ['noSandbox' => true], string $pre_script = null, int $timeout = 2000)
     {
         $browserFactory = new BrowserFactory('chromium-browser');
+
+        // force disable dev shm for all
+        $settings['customFlags'][] = self::DISABLE_DEV_SHM_FLAG;
 
         // starts headless chrome
         $this->browser = $browserFactory->createBrowser($settings);
